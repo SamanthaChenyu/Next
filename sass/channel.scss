@@ -1,0 +1,321 @@
+@import "compass";
+@import "breakpoint";
+@import "compass/css3/transform";
+@import "compass/css3/box-shadow";
+@import "compass/css3/filter";
+@import "compass/reset";
+
+
+
+$pc1500: max-width 1500px;
+$pc1366: max-width 1366px;
+$ipad: max-width 1117px;
+$iphone: max-width 1220px;
+$iphone5: max-width 635px;
+$iphone6: max-width 375px;
+$Android: max-width 320px;
+
+html, button, input {
+    font-family: Microsoft JhengHei,Helvetica,sans-serif;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #656565;
+    outline: none;
+}
+
+body {
+  background-color: #fff;
+  overflow-x: hidden;
+  &.diagonal-stripe-one {
+    background: repeating-linear-gradient(90deg, white, white 308px,rgba(146, 146, 146, 0.18) 310px);
+    display: block;
+    @include breakpoint($iphone5) {
+      background: repeating-linear-gradient(90deg, white, white 104px, rgba(146, 146, 146, 0.18) 105px);
+    }
+  }
+}
+
+a {
+	text-decoration: none;
+	&:visited {
+		color: #000;
+	}
+}
+
+.bar {
+    width: 30px;
+    position: fixed;
+    right: 50px;
+    top: 500px;
+    img {
+    	padding-bottom: 20px;
+    	cursor: pointer;
+    }
+	.ico {
+    	display: flex;
+    	flex-direction: column;
+    	align-items: center;
+	}
+	svg {
+		padding-bottom: 10px;
+		cursor: pointer;
+	}
+	@include breakpoint($pc1366) {
+		display: none;
+	}
+}
+.mb-ico {
+	display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+		@include breakpoint($iphone5) {
+			display: flex;
+		}
+}
+
+.container {
+    width: 1520px;
+    margin: auto;
+    display: -webkit-box;
+    overflow: hidden;
+    @include breakpoint($pc1500) {
+    	width: 100%;
+    }
+    @include breakpoint($iphone) {
+    	width: 635px;
+		display: flex;
+		flex-direction: column;
+    }
+    @include breakpoint($iphone5) {
+		width: 100%;
+    }	
+}
+
+%top {
+	padding-top: 150px;
+	padding-bottom: 50px;
+	@include breakpoint($iphone5) {
+		padding-top: 100px;
+    }
+}
+
+
+// @for $i from 1 through 5 {
+// .left#{$i} {
+//     @include breakpoint($iphone) {
+//         background-image: url("../images/" + $i + ".png");
+//     }
+//   }
+// }
+
+
+.left {
+	@extend %top;
+	width: 40%;
+	@include breakpoint($iphone) {
+		width: 90%;
+		margin: auto;
+    	background-repeat: no-repeat;
+    	background-size: 10%;
+    	background-position: 90% 55%;
+    }
+	@include breakpoint($iphone5) {
+    	background-position: 95% 45%;
+    }    
+	p {
+		color: #000;
+	}
+	.tittle {
+		text-align: right;
+    	width: 60%;
+    	height: 250px;
+    	margin: auto;
+    	@include breakpoint($pc1500) {
+    	width: 80%;
+    	    
+    	}
+    	@include breakpoint($iphone5) {
+    	width: 100%;height: 170px;
+    	}
+		p {
+			letter-spacing: 10px;
+    		font-weight: 900;
+    		font-size: 4.5rem;
+    		@include breakpoint($iphone5) {
+				font-size: 2.5rem;
+    		}			
+    	}
+    	.cotittle img {
+    		width: 130px;
+    		padding-right: 15px;
+    		@include breakpoint($iphone5) {
+				    width: 90px;
+    				padding-right: 12px;
+    		}
+    	}
+    	p.seprate-bar {
+    		width: 20px;
+    		height: 3px;
+    		background-color: #354b5d;
+    		float: right;
+    		margin: 50px 20px 50px 0px;		
+		}
+	}
+	.sec-tittle {
+    	letter-spacing: 5px;
+    	font-weight: bold;
+    	width: 100%;
+    	text-align: right;
+    	margin: auto;
+    	padding-bottom: 50px;
+    	float: right;
+    	font-size: 1.4rem;
+    	@include breakpoint($iphone5) {
+    		letter-spacing: 2px;
+    		font-size: 1rem;
+    	}
+    	p {
+    		width: 60%;
+    		margin: auto;
+    		padding-right: 20px;
+    		@include breakpoint($pc1500) {
+    			width: 80%;
+    		}
+    		@include breakpoint($iphone5) {
+    			width: 98%;
+    		}
+    	}		
+	}
+	.thr-tittle {
+		text-align: right;
+    	width: 60%;
+    	margin: auto;
+    	padding-right: 20px;
+    	line-height: 30px;
+    		@include breakpoint($pc1500) {
+    			width: 80%;
+    		}
+    		@include breakpoint($iphone5) {
+    			    width: 100%;
+    				font-size: 0.8rem;
+    		}
+	}
+}
+
+
+// @for $i from 1 through 5 {
+// .right#{$i} {
+//         background-image: url("../images/" + $i + ".png");
+//   }
+// }
+
+
+.right {
+	@extend %top;
+    width: 60%;
+    background-repeat: no-repeat;
+    background-size: 15%;
+    background-position: 96% 1%;
+    @include breakpoint($iphone) {
+		width: 90%;
+		margin: auto;
+		background-image: none;
+    }
+    @include breakpoint($iphone5) {
+		width: 95%;
+    } 
+	.article {
+		width: 80%;
+		margin: auto;
+		margin-bottom: 100px;
+	@include breakpoint($iphone) {
+    	width: 100%;
+    }
+    @include breakpoint($iphone5) {
+		margin-bottom: 30px;
+    }
+		p {
+    		text-align: center;
+    		font-size: 1.3rem;
+    		padding-top: 15px;
+    		font-weight: bold;
+    		color: #000;
+     		@include breakpoint($iphone5) {
+				font-size: 1rem;
+    		}   		
+    	}
+	}
+	.pic {
+    	height: 488px;
+    	box-shadow: 38px 32px 40px -13px rgba(0, 0, 0, 0.25);
+    	    @include breakpoint($pc1500) {
+    			height: 428px;
+    			    width: 640px;
+    		}
+    		@include breakpoint($iphone) {
+				   height: 353px;
+    				width: 530px;
+    				margin: auto;
+    		}
+    		@include breakpoint($iphone5) {
+				   height: 200px;
+    				width: 300px;
+    				margin: auto;
+    		}    		
+        &::before {
+            content: '';
+            z-index: 1;
+            position: absolute;
+            width: 730px;
+            height: 488px;
+            opacity: 0.6;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+            background: -webkit-linear-gradient(top left, #000000 0%, #000000 20%, #11293c 33%, #615947 69%, #11293c 100%);
+            background: -o-linear-gradient(top left, #000000 0%, #000000 20%, #11293c 33%, #615947 69%, #11293c 100%);
+            background: linear-gradient(to bottom right, #000000 0%, #000000 20%, #11293c 33%, #615947 69%, #11293c 100%);
+            transition: all 1s cubic-bezier(0.3, 0.1, 0.05, 1);
+            @include breakpoint($pc1500) {
+    			height: 428px;
+    			width: 640px;
+    		}
+    		@include breakpoint($iphone) {
+    			    height: 355px;
+    				width: 530px;
+                
+    		}
+    		@include breakpoint($iphone5) {
+				   height: 200px;
+    				width: 300px;
+    		}  
+    	}
+        &:hover::before {
+        	opacity: 0;
+        }
+	}
+	.more {
+    	width: 80%;
+    	text-align: center;
+    	background-color: #eeeeee;
+    	border: #eeeeee solid;
+    	padding: 10px 0px;
+    	letter-spacing: 5px;
+    	margin: 0px auto 50px auto;
+    	cursor: pointer;
+    	@include breakpoint($iphone) {
+				width: 98%;
+				
+    	}
+	}
+
+}
+   .footer {
+    width: 90%;
+    margin: 15px auto;
+    text-align: center;
+        @include breakpoint($iphone5) {
+                width: 95%;
+                font-size: 0.8rem;
+                text-align: center;
+        } 
+    }
